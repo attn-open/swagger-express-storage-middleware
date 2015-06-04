@@ -1,6 +1,6 @@
 {
   "name": "swagger-express-storage-middleware",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Storage engine middleware for use with swagger-express-middleware.",
   "license": "MIT",
   "main": "lib/index.js",
@@ -8,6 +8,7 @@
     "build": "rimraf lib && babel src --out-dir lib --source-maps",
     "lint": "standard",
     "prepublish": "npm run build",
+    "publish": "npm run build",
     "test": "mocha",
     "watch": "npm run build -- --watch"
   },
