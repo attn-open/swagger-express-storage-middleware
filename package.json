@@ -8,7 +8,6 @@
     "build": "rimraf lib && babel src --out-dir lib --source-maps",
     "lint": "standard",
     "prepublish": "npm run build",
-    "publish": "npm run build",
     "test": "mocha",
     "watch": "npm run build -- --watch"
   },
