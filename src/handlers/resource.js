@@ -24,7 +24,7 @@ export default function handler (storage) {
 }
 
 function find (req, res, next) {
-  Storage.findById(req.swagger.resourceType, getId(req), (err, resource) => {
+  Storage.findOne(req.swagger.resourceType, req.pathParams, (err, resource) => {
     return respond(err, resource, res, next)
   })
 }
@@ -50,6 +50,7 @@ function create (req, res, next) {
 // }
 
 function replace (req, res, next) {
+  // @todo Compare ID in path with ID in body.
   // First delete the current resource.
   destroyResource(req, (err, resource) => {
     if (err) {

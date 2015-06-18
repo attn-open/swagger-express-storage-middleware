@@ -2,14 +2,13 @@
 
 let debug = require('debug')('swagger:storage')
 
+import _ from 'lodash'
+
 export function getId (req) {
   let idParam
-  if (req.pathParams && req.swagger.params && req.swagger.params.length) {
-    req.swagger.params.forEach((param) => {
-      if (param.in === 'path') {
-        idParam = param.name
-      }
-    })
+  if (req.pathParams && req.swagger.params) {
+    // Use the last path parameter as the ID.
+    idParam = _.result(_.findLast(req.swagger.params, { in: 'path' }), 'name')
   }
   if (idParam) {
     debug("Parsed ID '%s' from path", req.pathParams[idParam])

@@ -26,7 +26,11 @@ export default function handler (storage) {
 }
 
 function find (req, res, next) {
+  // Remove undefined query paramaters.
   let query = _.omit(req.query, _.isUndefined)
+  // Merge in path parameters (to limit query by relationships).
+  query = _.merge(req.query, req.pathParams)
+  // Find the resources.
   Storage.find(req.swagger.resourceType, query, (err, resources) => {
     return respond(err, resources, res, next)
   })
