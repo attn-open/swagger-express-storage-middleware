@@ -12,11 +12,11 @@
     "watch": "npm run build -- --watch"
   },
   "dependencies": {
-    "babel": "^5.4.7",
+    "babel": "^5.5.8",
     "debug": "^2.2.0",
     "lodash": "^3.9.3",
-    "rimraf": "^2.3.4",
-    "waterline": "^0.10.23"
+    "rimraf": "^2.4.0",
+    "waterline": "^0.10.24"
   },
   "peerDependencies": {
     "express": "4.x",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "mocha": "^2.2.5",
-    "standard": "^4.0.1"
+    "standard": "^4.3.1"
   },
   "author": "attn:",
   "repository": {
