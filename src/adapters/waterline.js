@@ -94,7 +94,6 @@ export default class WaterlineAdapter extends Storage {
     })
   }
 
-  // @todo Does this method serve any real purpose?
   findOne (model, query, callback) {
     debug('Finding %s', model)
     this.getModel(model).findOne(query).exec(function (error, resource) {
